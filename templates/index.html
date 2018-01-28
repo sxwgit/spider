@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h2>hello，请输入商品名!</h2>
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}

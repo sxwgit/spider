@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+    <style>
+    #pic_url
+    {
+        position:absolute;
+        left:100px;
+        top:100px;
+    }
+
+    #price_picurl
+    {
+        position:absolute;
+        left:600px;
+        top:2px;
+    }
+    #jd_item
+    {
+        position:absolute;
+        left:100px;
+        top:500px;
+    }
+     #tt_item
+    {
+        position:absolute;
+        left:700px;
+        top:500px;
+    }
+    </style>
+    </head>
+
+    <body>
+        <div id="pic_url">
+            <img src='http://img10.360buyimg.com/n7/jfs/t3175/89/2690068639/114728/22c2edee/57e4a35bN230918c0.jpg',alt={{key_word}}>
+            <p><font size="5" face="arial">商品名：xxx</font></p>
+        </div>
+
+        <div id="price_picurl">
+            <p><img src="static/iphone6s.png",alt={{key_word}}></p>
+        </div>
+
+        <div id="jd_item">
+            <p><font size="4" face="arial">京东商品列表</font></p>
+        {%for i in list1%}
+        <p>
+            <a href="{{i.url}}">{{i.shop}}</a>,{{i.name}}:{{i.price}}
+        </p>
+        {%endfor%}
+        </div>
+
+        <div id="tt_item">
+            <p>淘宝商品列表</p>
+        {%for i in list2%}
+        <p>
+            <a href="{{i.url}}">{{i.shop}}</a>,{{i.name}}:{{i.price}}
+        </p>
+        {%endfor%}
+        </div>
+
+    </body>
+</html>

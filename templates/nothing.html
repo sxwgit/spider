@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+    <style>
+    #pic_url
+    {
+        position:absolute;
+        left:100px;
+        top:100px;
+    }
+
+    #price_picurl
+    {
+        position:absolute;
+        left:600px;
+        top:2px;
+    }
+    #jd_item
+    {
+        position:absolute;
+        left:100px;
+        top:500px;
+
+    }
+     #tt_item
+    {
+        position:absolute;
+        left:700px;
+        top:500px;
+    }
+    p.comment{
+        width:30em;
+        word-wrap:break-word;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="pic_url">
+            <img src='{{pic_url}}',alt={{key_word}}>
+            <p><font size="5" face="arial">商品名：{{key_word}}</font></p>
+        </div>
+
+        <div id="price_picurl">
+            <p><img src='{{price_picurl}}',alt={{key_word}}></p>
+        </div>
+
+        <div id="jd_item">
+            <p><font size="4" face="arial">京东商品列表</font></p>
+        {%for i in list1%}
+            <p><a href="{{i.url}}">{{i.shop}}</a>,{{i.name}}:{{i.price}}</p>
+            <p class="comment">
+            {%for j in i.comment%}
+                {{j}}:{{i.comment[j]}}
+            {%endfor%}
+            </p>
+        {%endfor%}
+        </div>
+
+        <div id="tt_item">
+            <p><font size="4" face="arial">淘宝商品列表</font></p>
+        {%for i in list2%}
+        <p>
+            <a href="{{i.url}}">{{i.shop}}</a>,{{i.name}}:{{i.price}}
+        </p>
+            <p class="comment">
+            {%for j in i.comment%}
+                {{j}}:{{i.comment[j]}}
+            {%endfor%}
+            </p>
+        {%endfor%}
+        </div>
+
+    </body>
+</html>
