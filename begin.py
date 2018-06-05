@@ -16,7 +16,7 @@ def f(d):
 
 
 def find_key(key):
-    conn = pymysql.connect(user='root', password='a765601220', database='paper', charset="utf8")
+    conn = pymysql.connect(user='root', password=password, database='paper', charset="utf8")
     curs = conn.cursor()
     nowtime = time.time()
     curs.execute('select keyword,time from paper_infor')
